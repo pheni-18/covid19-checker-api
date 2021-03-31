@@ -12,7 +12,5 @@ $ pipenv sync --dev
 $ pipenv run start
 ```
 
-http://localhost:8000/items/5?q=somequery
-
 ### Swagger
 http://localhost:8000/docs
