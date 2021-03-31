@@ -1,13 +1,14 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
+from services import CovidService
 
 app = FastAPI()
 
 
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+@app.get("/all")
+def get_all(date: str):
+    try:
+        res = CovidService.get_all_by_date(date)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail="API error")
 
-
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: str = None):
-    return {"item_id": item_id, "q": q}
+    return res
