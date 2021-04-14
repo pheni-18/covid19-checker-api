@@ -14,3 +14,8 @@ $ pipenv run start
 
 ### Swagger
 http://localhost:8000/docs
+
+### Test
+```
+$ pipenv run test
+```
