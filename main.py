@@ -31,6 +31,6 @@ def get_all(date: str):
     except ValidationError as e:
         raise HTTPException(status_code=400, detail="'date' is invalid")
     except Exception as e:
-        raise HTTPException(status_code=500, detail="API error")
+        raise HTTPException(status_code=500, detail='Open data API error')
 
     return res
